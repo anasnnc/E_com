@@ -14,17 +14,19 @@ body{
 .dropdown-item{
     letter-spacing: .2em;
     font-size:14px;
-    font_transform:uppercase;
+    font-transform:uppercase;
 }
 .my_footer{
-    background-color:#f8f9fa;
+    background-color:#e5edf6;
     height:60px;
+    position: fixed;
 
 }
 
 .my_footer p{
     padding-top:20x;
-    font-size;14px;
+    font-size:14px;
+    padding-top:100 px;
 
 }
 
@@ -46,7 +48,7 @@ body{
 .my_title{
     font-size:16px;
     text-transform:uppercase;
-    letter-spacing;2em;
+    letter-spacing:2em;
 }
 .my_image_padding{
     padding:5px;
@@ -57,7 +59,7 @@ body{
 }
 .card-body h4{
     font-size:16px;
-    txt-transform:uppercase;
+    text-transform : uppercase;
     letter-spacing:.2em;
 }
 
@@ -74,7 +76,7 @@ body{
 
 .my_pro_row_class .max-auto{
     color:#000;
-    text-size:12px
+    text-size-adjust : 12px;
     text-decoration:none;
 }
 .my_product_title{
@@ -121,4 +123,16 @@ body{
 .my_custom_button{
     margin-top:5px;
 
+}
+
+
+/*** header ***/
+
+.header_style{
+    background-color: #000;
+}
+
+
+.icon_ecom{
+    font-family: 'Pacifico', cursive;
 }

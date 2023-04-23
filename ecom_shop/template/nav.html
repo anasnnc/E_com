@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg  navbar-light" style="background-color: #e3f2fd;">
+<nav class="navbar navbar-expand-lg  navbar-light sticky-top" style="background-color: #e3f2fd;">
   <div class="container-fluid">
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,12 +27,98 @@
         </li>
           {% endif %}
     </ul>
-    <form class="d-flex" action="{% url 'search_app:searchResult' %}"  method="get">
-        {% csrf_token %}
-        <input class="form-control me-2" type="search" placeholder="Search" name="q" aria-label="Search">
-        <button class="btn btn-outline-primary" type="submit"><i class="fa fa-search" ></i></button>
-      </form>
+    <div class="d-flex">
+      <div class="px-2">
+        <form class="d-flex" action="{% url 'search_app:searchResult' %}"  method="get">
+          {% csrf_token %}
+          <input class="form-control me-2" type="search" placeholder="Search" name="q" aria-label="Search">
+          <button class="btn btn-outline-primary" type="submit"><i class="fa fa-search" ></i></button>
+        </form>
+
+      </div>
+      {% if  user.is_authenticated %}
+      <div class=" me-auto my-2 my-lg-0 py-2 ps-2">
+        <a class=" nav-link" href="{% url 'credentials:logout' %}" ><i class="fa-solid fa-arrow-right-to-bracket" ></i></a>
+      </div>
+        <div class="popup px-3 py-2" onclick="myFunction()"><i class="fa-solid fa-user"></i>
+            <span class="popuptext" id="myPopup"></span>
+        </div>
+        {% else %}
+
+        <div class=" me-auto my-2 my-lg-0 py-2 ps-2">
+          <a class=" nav-link" href="{% url 'credentials:login' %}" ><i class="fa-solid fa-arrow-right-to-bracket" ></i></a>
+        </div>
+        {% endif %}
+      
+    </div>
+    
   </div>
     </div>
 </nav>
 
+<style>
+
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  height:500px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+</style>
+<script>
+
+function myFunction() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+}
+</script>

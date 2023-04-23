@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="{% static 'css/costem.css' %}">
 <!--        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">-->
         <script src="{% static 'js/a076d05399.js' %}"></script>
+        <script src="https://kit.fontawesome.com/93aa4256af.js" crossorigin="anonymous"></script>
 
 
 
@@ -16,11 +17,15 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-<div class="container">
+ 
+<div>
     {% include 'header.html' %}
     {% include 'nav.html' %}
-    {% block content %}
-    {% endblock %}
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+    
 </div>
 {% include 'foot.html' %}
     <script src="{% static 'js/popper.min.js' %}" ></script>

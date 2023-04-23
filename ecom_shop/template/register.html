@@ -1,0 +1,75 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>register</title>-->
+<!--    <link href="style.css">-->
+<!--</head>-->
+<!--<body>-->
+<!--&lt;!&ndash;<form action="register" method="post">&ndash;&gt;-->
+<!--&lt;!&ndash;    <input type="text" name="Username" placeholder="Enter your Username"><br><br>&ndash;&gt;-->
+<!--&lt;!&ndash;    <input type="text" name="First_name" placeholder="Enter your First_name"><br><br>&ndash;&gt;-->
+<!--&lt;!&ndash;    <input type="text" name="Last_name" placeholder="Enter your Last_name"><br><br>&ndash;&gt;-->
+<!--&lt;!&ndash;    <input type="email" name="Email" placeholder="Enter your Email address"><br><br>&ndash;&gt;-->
+<!--&lt;!&ndash;    <input type="password" name="password" placeholder="enter password"><br><br>&ndash;&gt;-->
+<!--&lt;!&ndash;    <input type="password" name="password1" placeholder="Confirm password"><br><br>&ndash;&gt;-->
+<!--&lt;!&ndash;    <input type="submit">&ndash;&gt;-->
+<!--&lt;!&ndash;</form>&ndash;&gt;-->
+
+
+<!--</body>-->
+<!--</html>-->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <form action="" method="post">
+  <h2>Registration</h2>
+    {% csrf_token %}
+     <div class="form-group">
+      <label for="username">Username:</label>
+      <input type="text" class="form-control" id="username" name="Username" placeholder="Enter Username">
+    </div>
+    <div class="form-group">
+      <label for="name1">First_name:</label>
+      <input type="text" class="form-control" id="name1" name="First_name" placeholder="Enter First_name">
+    </div>
+    <div class="form-group">
+      <label for="name2">Last_name:</label>
+      <input type="text" class="form-control" id="name2" name="Last_name" placeholder="Enter Last_name">
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+    </div>
+
+<!--    <div class="form-group">-->
+<!--      <label for="pwd">Password:</label>-->
+<!--      <input type="password" class="form-control"  placeholder="Enter password">-->
+<!--    </div>-->
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" name="password" placeholder="Enter password">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Confirm Password:</label>
+      <input type="password" class="form-control" name="password1" placeholder="Confirm password">
+    </div>
+<!--    <div class="checkbox">-->
+<!--      <label><input type="checkbox" name="check"> Remember me</label>-->
+<!--    </div>-->
+    <input type="submit" class="btn btn-default">
+  </form>
+  {% for msg in messages %}
+  {{msg}}
+  {% endfor %}
+</div>
+</body>
+</html>
